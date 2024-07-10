@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bhaviyn-clo835-deployment
+  labels:
+    app: bhaviyn-clo835-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bhaviyn-clo835-app
+  template:
+    metadata:
+      labels:
+        app: bhaviyn-clo835-app
+    spec:
+      containers:
+      - name: bhaviyn-clo835-container
+        image: bhaviyn/clo835_project-2:latest
+        ports:
+        - containerPort: 3030
